@@ -3,10 +3,16 @@ require_once('controllers/error.php');
 
 class App{
     function __construct(){
-        $url = $_GET['url'];
+        $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url,'/');
         $url = explode('/',$url);
         // var_dump($url);
+        if(empty($url[0])){
+            $archivoController = 'controllers/main.php';
+            require_once($archivoController);
+            $controller = new Main();
+            return false;
+        }
         $archivoController = 'controllers/' . $url[0] . '.php';
         
         if(file_exists($archivoController)){

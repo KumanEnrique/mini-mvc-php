@@ -2,7 +2,7 @@
 require_once('views/header.php');
 ?>
 <div class="main">
-    <h3 style="color:red;"><?php echo($this->mensaje); ?></h3>
+    <h1 class="center">bienvenidos al nuevo</h1>
 </div>
 <?php
 require_once('views/footer.php');
