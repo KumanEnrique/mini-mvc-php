@@ -4,4 +4,8 @@ class Nuevo extends Controller{
         parent::__construct();
         $this->view->render('nuevo/index');
     }
+    public function registrarAlumno(){
+        echo('metodo registrarAlumno del controlador nuevo');
+        $this->model->insert();
+    }
 }
