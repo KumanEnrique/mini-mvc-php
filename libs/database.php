@@ -12,7 +12,7 @@ class Database{
     }
     public function connect(){
         try {
-            $connection = "mysql:host".$this->host.";dbname=".$this->db;
+            $connection = "mysql:host=".$this->host.";dbname=".$this->db;
             $options = [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_EMULATE_PREPARES => false

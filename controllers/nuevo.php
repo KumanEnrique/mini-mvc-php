@@ -5,7 +5,10 @@ class Nuevo extends Controller{
         $this->view->render('nuevo/index');
     }
     public function registrarAlumno(){
+        $matricula = $_POST['matricula'];
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
         echo('metodo registrarAlumno del controlador nuevo');
-        $this->model->insert();
+        $this->model->insert(['matricula'=>$matricula,'nombre'=>$nombre,'apellido'=>$apellido]);
     }
 }
