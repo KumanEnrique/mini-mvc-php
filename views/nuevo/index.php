@@ -2,6 +2,7 @@
 require_once('views/header.php');
 ?>
     <h1 style="display:flex;justify-content: center;">bienvenidos al nuevo</h1>
+    <div style="display:flex;justify-content: center;"><?php echo($this->mensaje); ?></div>
 <div style="display:flex;justify-content: center;">
     <br>
     <form action="<?php echo(constant('URL')); ?>nuevo/registrarAlumno" method="post">
