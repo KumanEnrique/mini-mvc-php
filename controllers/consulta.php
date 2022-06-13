@@ -39,13 +39,10 @@ class Consulta extends Controller{
     public function eliminarAlumno($param = null){
         $matricula = $param[0];
         if($this->model->delete($matricula)){
-            $this->view->mensaje = "Alumno eliminado correctamente";
+            $mensaje = "Alumno eliminado correctamente";
         }else{
-            $this->view->mensaje = "hubo un problema en eliminar";
+            $mensaje = "hubo un problema en eliminar";
         }
-        /* $alumnos = $this->model->get();
-        $this->view->datos = $alumnos;
-        $this->view->render('consulta/index'); */
-        header('Location: http://localhost:8080/fg/framework-mvc-php/consulta');
+        echo($mensaje);
     }
 }
