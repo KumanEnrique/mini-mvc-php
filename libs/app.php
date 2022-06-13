@@ -24,13 +24,18 @@ class App{
             $controller = new $url[0]();
             $controller->loadModel($url[0]);
             //si hay metodo que se quiere cargar
-            if(isset($url[1])){
-                $controller->{$url[1]}();
-                // if(method_exists($controller,$url[1])){
-                //     $controller->{$url[1]}();
-                // }else{
-                //     echo "error!!!! no existe el metodo " . $url[1];
-                // }
+            // numero de elementos en el arreglo
+            $nparam = sizeof($url);
+            if($nparam > 1){
+                if($nparam > 2){
+                    $param = [];
+                    for($i = 2;$i < $nparam ;$i++){
+                        array_push($param,$url[$i]);
+                    }
+                    $controller->{$url[1]}($param);
+                }else{
+                    $controller->{$url[1]}();
+                }
             }else{
                 //no funciona con el metodo
                 $controller->render();

@@ -29,7 +29,7 @@ require_once('views/header.php');
                 print('<td>'.$row->matricula.'</td>');
                 print('<td>'.$row->nombre.'</td>');
                 print('<td>'.$row->apellido.'</td>');
-                print('<td><a href="#">eliminar</a> <a href="#">editar</a> </td>');
+                print('<td><a href="'.constant('URL').'consulta/verAlumno/'.$row->matricula.'">editar</a> <a href="'.constant('URL').'consulta/eliminarAlumno/'.$row->matricula.'">eliminar</a> </td>');
                 print('</tr>');
             }
             ?>
